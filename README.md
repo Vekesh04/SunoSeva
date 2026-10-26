@@ -1,6 +1,6 @@
 <div align="center">
 
-# SunoSeva
+![SunoSeva](cover.svg)
 
 **Speak naturally. Receive guidance. Access digital services.**
 
@@ -9,8 +9,6 @@
 [Portfolio](https://vekeshportfolio.lovable.app/) · [Developer profile](https://github.com/Vekesh04)
 
 </div>
-
-> **Publication status:** Documentation is published. Source folders and configuration examples are prepared and awaiting upload.
 
 ## Why SunoSeva?
 

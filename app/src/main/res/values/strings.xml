@@ -1,0 +1,95 @@
+<resources>
+    <!-- App Name and Branding -->
+    <string name="app_name">SunoSeva</string>
+    <string name="app_subtitle">మీ గొంతులో ప్రభుత్వ సహాయం\nGovernment Help in Your Voice</string>
+    <string name="app_logo_description">SunoSeva Government Assistance Logo</string>
+
+    <!-- Language Selection -->
+    <string name="language_label">భాష / Language:</string>
+    <string-array name="supported_languages">
+        <item>తెలుగు (Telugu)</item>
+        <item>हिंदी (Hindi)</item>
+        <item>தமிழ் (Tamil)</item>
+        <item>English</item>
+        <item>বাংলা (Bengali)</item>
+        <item>অসমীয়া (Assamese)</item>
+        <item>मराठी (Marathi)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>ಕನ್ನಡ (Kannada)</item>
+        <item>മലയാളം (Malayalam)</item>
+        <item>ଓଡ଼ିଆ (Odia)</item>
+        <item>ਪੰਜਾਬੀ (Punjabi)</item>
+        <item>नेपाली (Nepali)</item>
+        <item>اردو (Urdu)</item>
+        <item>संस्कृतम् (Sanskrit)</item>
+        <item>कोंकणी (Konkani)</item>
+        <item>डोगरी (Dogri)</item>
+        <item>मैथिली (Maithili)</item>
+        <item>बोडो (Bodo)</item>
+        <item>سنڌي (Sindhi)</item>
+        <item>कॉशुर / Kashmiri</item>
+    </string-array>
+    <string-array name="language_codes">
+        <item>te-IN</item>
+        <item>hi-IN</item>
+        <item>ta-IN</item>
+        <item>en-IN</item>
+        <item>bn-IN</item>
+        <item>as-IN</item>
+        <item>mr-IN</item>
+        <item>gu-IN</item>
+        <item>kn-IN</item>
+        <item>ml-IN</item>
+        <item>or-IN</item>
+        <item>pa-IN</item>
+        <item>ne-IN</item>
+        <item>ur-IN</item>
+        <item>sa-IN</item>
+        <item>kok-IN</item>
+        <item>doi-IN</item>
+        <item>mai-IN</item>
+        <item>brx-IN</item>
+        <item>sd-IN</item>
+        <item>ks-IN</item>
+    </string-array>
+
+    <!-- Status Messages -->
+    <string name="status_ready">మైక్ బటన్ నొక్కి మాట్లాడండి\nPress mic button and speak</string>
+    <string name="status_listening">వింటున్నాను… మాట్లాడండి\nListening… Please speak</string>
+    <string name="status_processing">సమాధానం తయారు చేస్తున్నాను…\nPreparing response…</string>
+    <string name="status_speaking">సమాధానం వినండి…\nListening to response…</string>
+    <string name="status_error">ఏదో తప్పు జరిగింది, మళ్ళీ ప్రయత్నించండి\nSomething went wrong, please try again</string>
+    <string name="status_no_speech">ఏమీ వినబడలేదు\nNo speech detected</string>
+    <string name="status_network_error">ఇంటర్నెట్ లేదు\nNo internet connection</string>
+
+    <!-- Button Descriptions (for accessibility) -->
+    <string name="mic_button_description">మైక్రోఫోన్ - మాట్లాడటానికి నొక్కండి</string>
+    <string name="replay_button_description">మళ్ళీ వినండి</string>
+    <string name="stop_button_description">ఆపండి</string>
+
+    <!-- Response Section -->
+    <string name="response_header">సమాధానం / Response:</string>
+
+    <!-- Permission Messages -->
+    <string name="permission_required">మైక్రోఫోన్ అనుమతి అవసరం\nMicrophone permission is required</string>
+    <string name="permission_denied">మైక్రోఫోన్ అనుమతి ఇవ్వండి\nPlease grant microphone permission</string>
+    <string name="permission_settings">సెట్టింగ్స్‌లో అనుమతి ఇవ్వండి</string>
+
+    <!-- Error Messages -->
+    <string name="error_speech_not_available">వాయిస్ గుర్తింపు అందుబాటులో లేదు\nSpeech recognition not available</string>
+    <string name="error_speech_network">స్పీచ్ సర్వీస్ నెట్‌వర్క్ సమస్య ఉంది, మళ్ళీ ప్రయత్నించండి\nSpeech service network error, please try again</string>
+    <string name="error_speech_client">స్పీచ్ సర్వీస్ తాత్కాలిక సమస్య, మైక్ మళ్ళీ నొక్కండి\nSpeech service temporary issue, tap mic again</string>
+    <string name="error_speech_busy">స్పీచ్ సర్వీస్ బిజీగా ఉంది, కాసేపటికి మళ్ళీ ప్రయత్నించండి\nSpeech service is busy, try again in a moment</string>
+    <string name="error_api_failed">సర్వర్ నుండి సమాధానం రాలేదు\nFailed to get response from server</string>
+    <string name="error_tts_not_available">వాయిస్ అవుట్‌పుట్ అందుబాటులో లేదు\nText-to-speech not available</string>
+    <string name="error_empty_input">ఏదైనా మాట్లాడి మళ్ళీ ప్రయత్నించండి\nPlease speak something and try again</string>
+    <string name="error_api_key_missing">API key లేదు, local.properties లో OPENAI_API_KEY, GROQ_API_KEY లేదా OPENROUTER_API_KEY సెట్ చేయండి\nAPI key missing, set OPENAI_API_KEY, GROQ_API_KEY, or OPENROUTER_API_KEY in local.properties</string>
+
+    <!-- Prompts and Instructions -->
+    <string name="welcome_message">నమస్కారం! నేను SunoSeva. ప్రభుత్వ పథకాలు మరియు సేవల గురించి అడగండి.\nHello! I am SunoSeva. Ask about government schemes and services.</string>
+
+    <!-- Navigation Titles (kept for compatibility) -->
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

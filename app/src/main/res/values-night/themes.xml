@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Night/Dark theme for SunoSeva -->
+    <style name="Theme.SunoSeva" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color - Lighter for dark mode -->
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary_light</item>
+        <item name="colorSecondaryVariant">@color/secondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Background for dark mode -->
+        <item name="android:colorBackground">#121212</item>
+        <item name="colorSurface">#1E1E1E</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+
+        <!-- Error -->
+        <item name="colorError">#CF6679</item>
+        <item name="colorOnError">@color/black</item>
+
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

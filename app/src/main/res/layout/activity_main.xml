@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SunoSeva Main Activity Layout
+    Designed for accessibility - large buttons, high contrast, minimal clutter
+    Voice-first interface for illiterate/semi-literate users
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_screen_background"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- App Header with Title -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_panel_background"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- App Icon/Logo -->
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_government_help"
+            android:contentDescription="@string/app_logo_description"
+            app:tint="@color/text_emphasis" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_emphasis"
+            android:letterSpacing="0.01"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/appSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_subtitle"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Language Selector -->
+    <LinearLayout
+        android:id="@+id/languageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/language_label"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/languageSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="150dp"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <!-- Status Indicator Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/statusCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/surface_tint"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="6dp"
+        app:strokeColor="@color/surface_border"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/languageLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center">
+
+            <!-- Status Icon with Animation Support -->
+            <ImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_mic_ready"
+                android:contentDescription="@string/status_ready"
+                app:tint="@color/primary" />
+
+            <!-- Status Text - Large for visibility -->
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_ready"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_emphasis"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+
+            <!-- Recognized Speech Display -->
+            <TextView
+                android:id="@+id/recognizedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Response Card - Scrollable for long responses -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/responseCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/response_tint"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="6dp"
+        app:strokeColor="@color/header_card_border"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/statusCard"
+        app:layout_constraintBottom_toTopOf="@id/buttonLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Response Header -->
+                <TextView
+                    android:id="@+id/responseHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/response_header"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_emphasis"
+                    android:textStyle="bold" />
+
+                <!-- AI Response Text - Large and readable -->
+                <TextView
+                    android:id="@+id/responseText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:textColor="@color/text_primary"
+                    android:lineSpacingExtra="6dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="यह सरकारी सहायता का जवाब है। कृपया अपना आधार कार्ड तैयार रखें।" />
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom Button Layout -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Replay Button - Replays the last response -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/replayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="@string/replay_button_description"
+            android:src="@drawable/ic_replay"
+            android:visibility="gone"
+            app:backgroundTint="@color/secondary"
+            app:fabSize="normal"
+            app:tint="@color/white"
+            tools:visibility="visible" />
+
+        <!-- Main Microphone Button - Large for accessibility -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/micButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/mic_button_description"
+            android:src="@drawable/ic_mic"
+            app:backgroundTint="@color/primary"
+            app:fabCustomSize="80dp"
+            app:maxImageSize="40dp"
+            app:tint="@color/white" />
+
+        <!-- Stop Button - Stops current operation -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/stop_button_description"
+            android:src="@drawable/ic_stop"
+            android:visibility="gone"
+            app:backgroundTint="@color/error"
+            app:fabSize="normal"
+            app:tint="@color/white"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <!-- Loading Overlay -->
+    <FrameLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlay_background"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        tools:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/loadingProgress"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

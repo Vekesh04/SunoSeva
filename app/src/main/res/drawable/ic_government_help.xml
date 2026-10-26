@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Government Help Icon - Building with shield -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Building base -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M12,2L4,6v2h16V6L12,2zM4,20h16v-2H4V20zM6,10v6h3v-6H6zM10.5,10v6h3v-6H10.5zM15,10v6h3v-6H15z"/>
+    <!-- Helping hand overlay -->
+    <path
+        android:fillColor="#FF6F00"
+        android:pathData="M20,12c0,0 -1.5,-0.5 -3,-0.5c-1.5,0 -2,0.5 -2,0.5V10h5V12z"
+        android:fillAlpha="0.8"/>
+</vector>

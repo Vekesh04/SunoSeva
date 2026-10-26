@@ -1,0 +1,5 @@
+# Copy to local.properties and add your local Android SDK location.
+sdk.dir=/path/to/Android/sdk
+OPENAI_API_KEY=
+OPENROUTER_API_KEY=
+GROQ_API_KEY=
